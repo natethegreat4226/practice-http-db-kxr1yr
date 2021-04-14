@@ -25,7 +25,7 @@ export class StudentListComponent implements OnInit {
       name: this.sName,
       age: this.sAge
     };
-    this.stdService.addStudent(newStudent);
+    this.stdService.addStudent(newStudent).subscribe();
     //this.studentList.push(newStudent);
   }
 

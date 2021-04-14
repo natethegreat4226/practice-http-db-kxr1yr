@@ -16,7 +16,7 @@ export class StudentListComponent implements OnInit {
   constructor(private stdService: StudentService) {}
 
   ngOnInit() {
-    this.studentList = this.stdService.STUDENTS;
+    //this.studentList = this.stdService.STUDENTS;
   }
 
   addNewStudent() {
@@ -31,5 +31,11 @@ export class StudentListComponent implements OnInit {
 
   onClearData() {
     this.studentList = [];
+  }
+
+  fetchData() {
+    this.stdService
+      .getStudentData()
+      .subscribe(data => (this.studentList = data));
   }
 }
